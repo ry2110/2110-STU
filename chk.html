@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RY2110 STUDIO</title>
+</head>
+<style>
+    html {
+        scrollbar-width: thin;
+    }
+    
+    body {
+        background-color: rgb(211, 211, 211);
+        font-family: Arial;
+        position: relative;
+    }
+
+    img {
+        width: 256px;
+        height: 256px;
+    }
+    
+    h1 {
+        font-weight: bold;
+        font-size: 35px;
+    }
+
+    h2 {
+        font-style: italic;
+        font-weight: normal;
+        font-size: 25px;
+    }
+
+    a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 30px;
+    }
+    e {
+        display: contents;
+    }
+
+</style>
+<body>
+    <script src="esp.js"></script>
+    <center id="main">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="chk.svg">
+        <div id="game"></div>
+        <h2>Copyrighted (C) RY2110 STU</h2>
+        <br>
+        <a href="index.html">GO BACK</a>
+    </center>
+</body>
+<script src="dzh.js"></script>
+<script>
+    // board
+
+    dzh.int("add", "block", "#game", "board", "width", "512px")
+    dzh.int("change", "block", "", "board", "height", "512px")
+    dzh.int("change", "block", "", "board", "background-Color", "white")
+    //dzh.int("change", "block", "", "board", "background-image",
+    //    "linear-gradient(180deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(-90deg, black 25%, transparent 25%, transparent 75%, black 75%, black"
+    //)
+    dzh.int(
+        "change", "block", "", "board", "background", "conic-gradient(black 90deg, white 90deg 180deg, black 180deg 270deg, white 180deg 270deg)"
+    )
+    dzh.int("change", "block", "", "board", "background-size", "128px 128px")
+    dzh.int("change", "block", "", "board", "background-repeat", "repeat")
+    dzh.int("change", "block", "", "board", "background-position", "top left")
+    dzh.int("change", "block", "", "board", "display", "flex")
+    dzh.int("change", "block", "", "board", "overflow", "hidden")
+
+    // draughts
+
+    dzh.int("add", "block", "#board", "a1", "width", "64px")
+    dzh.int("change", "block", "", "a1", "height", "64px")
+    dzh.int("change", "block", "", "a1", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a1", "border-radius", "50%")
+    dzh.int("change", "block", "", "a1", "position", "relative")
+
+    dzh.int("add", "block", "#board", "a2", "width", "64px")
+    dzh.int("change", "block", "", "a2", "height", "64px")
+    dzh.int("change", "block", "", "a2", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a2", "border-radius", "50%")
+    dzh.int("change", "block", "", "a2", "top", "12.5%")
+    dzh.int("change", "block", "", "a2", "position", "relative")
+
+    dzh.int("add", "block", "#board", "a3", "width", "64px")
+    dzh.int("change", "block", "", "a3", "height", "64px")
+    dzh.int("change", "block", "", "a3", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a3", "border-radius", "50%")
+    dzh.int("change", "block", "", "a3", "top", "25%")
+    dzh.int("change", "block", "", "a3", "left", "-25%")
+    dzh.int("change", "block", "", "a3", "position", "relative")
+
+    dzh.int("add", "block", "#board", "a4", "width", "64px")
+    dzh.int("change", "block", "", "a4", "height", "64px")
+    dzh.int("change", "block", "", "a4", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a4", "border-radius", "50%")
+    dzh.int("change", "block", "", "a4", "left", "-12.5%")
+    dzh.int("change", "block", "", "a4", "position", "relative")
+    
+    dzh.int("add", "block", "#board", "a5", "width", "64px")
+    dzh.int("change", "block", "", "a5", "height", "64px")
+    dzh.int("change", "block", "", "a5", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a5", "border-radius", "50%")
+    dzh.int("change", "block", "", "a5", "bottom", "-12.5%")
+    dzh.int("change", "block", "", "a5", "left", "-12.5%")
+    dzh.int("change", "block", "", "a5", "position", "relative")
+
+    dzh.int("add", "block", "#board", "a6", "width", "64px")
+    dzh.int("change", "block", "", "a6", "height", "64px")
+    dzh.int("change", "block", "", "a6", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a6", "border-radius", "50%")
+    dzh.int("change", "block", "", "a6", "top", "25%")
+    dzh.int("change", "block", "", "a6", "left", "-37.5%")
+    dzh.int("change", "block", "", "a6", "position", "relative")
+
+    dzh.int("add", "block", "#board", "a7", "width", "64px")
+    dzh.int("change", "block", "", "a7", "height", "64px")
+    dzh.int("change", "block", "", "a7", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a7", "border-radius", "50%")
+    dzh.int("change", "block", "", "a7", "left", "-25%")
+    dzh.int("change", "block", "", "a7", "position", "relative")
+
+    dzh.int("add", "block", "#board", "a8", "width", "64px")
+    dzh.int("change", "block", "", "a8", "height", "64px")
+    dzh.int("change", "block", "", "a8", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a8", "border-radius", "50%")
+    dzh.int("change", "block", "", "a8", "left", "-25%")
+    dzh.int("change", "block", "", "a8", "bottom", "-12.5%")
+    dzh.int("change", "block", "", "a8", "position", "relative")
+        
+    //dzh.int("add", "block", "#board", "a9", "width", "64px")
+    dzh.int("change", "block", "", "a9", "height", "64px")
+    dzh.int("change", "block", "", "a9", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a9", "border-radius", "50%")
+    dzh.int("change", "block", "", "a9", "left", "-37.5%")
+    dzh.int("change", "block", "", "a9", "bottom", "-25%")
+    dzh.int("change", "block", "", "a9", "position", "relative")
+
+    //dzh.int("add", "block", "#board", "a10", "width", "64px")
+    dzh.int("change", "block", "", "a10", "height", "64px")
+    dzh.int("change", "block", "", "a10", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a10", "border-radius", "50%")
+    dzh.int("change", "block", "", "a10", "left", "-25%")
+    dzh.int("change", "block", "", "a10", "bottom", "-12.5%")
+    dzh.int("change", "block", "", "a10", "position", "relative")
+    
+    dzh.int("add", "block", "#board", "a11", "width", "64px")
+    dzh.int("change", "block", "", "a11", "height", "64px")
+    dzh.int("change", "block", "", "a11", "background-color", "rgb(92, 64, 51)")
+    dzh.int("change", "block", "", "a11", "border-radius", "50%")
+    dzh.int("change", "block", "", "a11", "left", "-25%")
+    dzh.int("change", "block", "", "a11", "bottom", "-12.5%")
+    dzh.int("change", "block", "", "a11", "position", "relative")
+</script>
+</html>

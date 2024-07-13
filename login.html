@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RY2110 STUDIO</title>
+</head>
+<style>
+    body {
+        background-color: rgb(211, 211, 211);
+        font-family: Arial;
+        position: relative;
+    }
+
+    img {
+        width: 256px;
+        height: 256px;
+    }
+    
+    h1 {
+        font-weight: bold;
+        font-size: 35px;
+    }
+
+    h2 {
+        font-style: italic;
+        font-weight: normal;
+        font-size: 25px;
+    }
+    
+    #icon {
+        width: 256px;
+        height: 256px;
+    }
+
+    #projects {
+        background-color: white;
+        width: 512px;
+        height: 512px;
+        color: rgb(133, 133, 133);
+        border-radius: 15%;
+        overflow: hidden;
+    }
+
+    #epg, #dazh {
+        background-color: rgb(240, 240, 240);
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        transition: all 0.25s ease-in-out;
+    }
+
+    #epg:hover, #dazh:hover {
+        background-color: rgb(255, 254, 216);
+        transform: scale(1.1);
+    }
+
+    a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+    #login, #signup, #home, #contact {
+        width: 64px;
+        height: 32px;
+        border: 0px;
+    }
+
+    #nav {
+        gap: 2px;
+        display: flex;
+    }
+
+    #logo {
+        width: 64px;
+        height: 64px;
+        position: absolute;
+    }
+
+    #nickname, #id, #login {
+        text-align: center;
+        text-transform: uppercase;
+        border: 0px;
+    }
+
+</style>
+<body>
+    <a href="index.html"><img src="shortcut.svg" id="logo"></a>
+    <center>
+        <img src="icon.svg" id="icon">
+        <h1>RY2110 STU</h1>
+        <h2>A studio with many interesting ideas.</h2>
+        <h1>LOGIN</h1>
+        <h2>NICKNAME</h2>
+        <input type="text" id="nickname">
+        <h2>ID</h2>
+        <input type="password" id="id">
+        <br>
+        <br>
+        <button type="button" id="login" onclick="login()">LOGIN</button>
+        <!--div id="projects">
+            <div id="epg">
+                Easier Programming<br><br>
+                Javascript - HTML<br><br>
+                STATUS : WORKING
+            </div>
+            <div id="dazh">
+                Dazh Programming language<br><br>
+                Javascript - Dazh<br><br>
+                STATUS : RELEASED V2.0.0
+            </div>
+        </div-->
+    </center>
+</body>
+<script>
+    function login() {
+        const nickname = document.getElementById("nickname").value
+        const id = document.getElementById("id").value
+        console.log(nickname, id)
+        if (nickname.toUpperCase() == "TINTIN" && id == "13579") {
+            localStorage.setItem("$2110STU/NICKNAME",nickname)
+            localStorage.setItem("$2110STU/ID",id)
+            window.location.href = "index.html"
+        }
+        if (nickname.toUpperCase() == "BETA" && id == "246810") {
+            localStorage.setItem("$2110STU/NICKNAME",nickname)
+            localStorage.setItem("$2110STU/ID",id)
+            window.location.href = "index.html"
+        }
+    }
+</script>
+</html>

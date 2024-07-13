@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RY2110 STUDIO</title>
+</head>
+<style>
+    body {
+        background-color: rgb(211, 211, 211);
+        font-family: Arial;
+        position: relative;
+    }
+
+    img {
+        width: 256px;
+        height: 256px;
+    }
+    
+    h1 {
+        font-weight: bold;
+        font-size: 35px;
+    }
+
+    h2 {
+        font-style: italic;
+        font-weight: normal;
+        font-size: 25px;
+    }
+
+    #game {
+        width: 512px;
+        height: 512px;
+        background-color: rgb(240, 240, 240);
+    }
+
+    a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+</style>
+<body>
+    <script src="esp.js"></script>
+    <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <img src="ctb.svg">
+        <canvas id="game"></canvas>
+        <h2>Copyrighted (C) RY2110 STU</h2>
+        <br>
+        <a href="index.html">GO BACK</a>
+    </center>
+</body>
+<script>
+    const canvas = document.querySelector("#game")
+    const id = canvas.id
+    esp.canvas = "#game"
+    console.log(esp.canvas)
+    console.log(id)
+    function game() {
+        for (let i = 0; i < 9; i++) {
+            esp.int(".ady")
+        }
+        for (let i = 0; i < 16; i++) {
+            esp.int(".adx")
+        }
+        for (let i = 0; i < 6; i++) {
+            esp.int("01.add")
+        }
+        for (let i = 0; i < 8; i++) {
+            esp.int(".ngx")
+        }
+        for (let i = 0; i < 1; i++) {
+            esp.int(".ady")
+        }
+        for (let i = 0; i < 10; i++) {
+            esp.int("00.add")
+        }
+        for (let i = 0; i < 1; i++) {
+            esp.int(".ady")
+        }
+        for (let i = 0; i < 8; i++) {
+            esp.int(".ngx")
+        }
+        for (let i = 0; i < 6; i++) {
+            esp.int("03.add")
+        }
+        for (let i = 0; i < 6; i++) {
+            esp.int(".ngx")
+        }
+        for (let i = 0; i < 6; i++) {
+            esp.int("03.add")
+        }
+        for (let i = 0; i < 8; i++) {
+            esp.int(".ngx")
+        }
+        for (let i = 0; i < 1; i++) {
+            esp.int(".ady")
+        }
+        for (let i = 0; i < 10; i++) {
+            esp.int("00.add")
+        }
+        for (let i = 0; i < 10; i++) {
+            esp.int(".ngx")
+        }
+        for (let i = 0; i < 1; i++) {
+            esp.int(".ngy")
+        }
+        for (let i = 0; i < 2; i++) {
+            esp.int("00.add")
+        }
+        for (let i = 0; i < 6; i++) {
+            esp.int(".adx")
+        }
+        for (let i = 0; i < 2; i++) {
+            esp.int("00.add")
+        }
+    }
+    game()
+</script>
+</html>
